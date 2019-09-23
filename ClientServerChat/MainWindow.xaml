@@ -5,8 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClientServerChat"
         mc:Ignorable="d"
+        DataContext="{StaticResource MainWindowViewModel}"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="772">
+            <Label Content="Name" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="57,14,0,0" TextWrapping="Wrap" Text="{Binding Name}" IsEnabled="{Binding JoinButtonEnabled}" VerticalAlignment="Top" Width="120"/>
+            <Button Content="Join" Command="{Binding JoinCommand}" IsEnabled="{Binding JoinButtonEnabled}" HorizontalAlignment="Left" Margin="189,16,0,0" VerticalAlignment="Top" Width="75"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,52,0,0" TextWrapping="Wrap" Text="{Binding ChatContent}" VerticalAlignment="Top" Height="279" Width="752"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="10,351,0,0" TextWrapping="Wrap" Text="{Binding SendContent}" IsEnabled="{Binding SendButtonEnabled}" VerticalAlignment="Top" Width="629"/>
+            <Button Content="Send" Command="{Binding SendCommand}" IsEnabled="{Binding SendButtonEnabled}" HorizontalAlignment="Left" Margin="644,351,0,0" VerticalAlignment="Top" Width="80" Height="23"/>
+            <Button Content="Leave" Command="{Binding LeaveCommand}" IsEnabled="{Binding SendButtonEnabled}" HorizontalAlignment="Left" Margin="269,16,0,0" VerticalAlignment="Top" Width="75"/>
+        </Grid>
+
     </Grid>
 </Window>
